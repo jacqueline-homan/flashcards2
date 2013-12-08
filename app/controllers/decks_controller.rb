@@ -17,6 +17,7 @@ class DecksController < ApplicationController
   	@deck = Deck.new(params[:deck])
   	@deck.save
   	redirect_to decks_path
+  #  redirect_to @decks <--- This didn't work.
   end
 
   def edit
@@ -26,7 +27,7 @@ class DecksController < ApplicationController
   def update
     @deck = Deck.find(params[:id])
     @deck.update_attributes(params[:deck])
-    redirect_to deck_path(@deck.id)
+    redirect_to @deck
   end
 
   def destroy
