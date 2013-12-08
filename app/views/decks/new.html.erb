@@ -1,0 +1,10 @@
+<%= form_for(@deck) do |form| %>
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+  <%-# thoughtbot instructor omitted the <div class= "actions"> code and although it worked for him that way, it did not work for me -%>
+  
+  <%= form.submit "Create Deck" %>
+
+<% end %>

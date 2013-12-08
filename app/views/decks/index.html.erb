@@ -1,0 +1,11 @@
+<b>~~Welcome~~</b><br />
+<br />
+<b><i><%= link_to "Add New Deck", "decks/new" %></i></b><br />
+<br />
+<% @decks.each do |deck| %>
+  <div><%= link_to deck.name, "/decks/#{deck.id}" %>
+  	-
+  	<%= link_to "Edit", "/decks/#{deck.id}/edit" %>
+  	<%= link_to "Delete", "/decks/#{deck.id}", method: :delete, confirm: "Are you sure?" %>
+  	</div>
+<% end %>
