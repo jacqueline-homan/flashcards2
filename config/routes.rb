@@ -1,12 +1,13 @@
 Flashcards2::Application.routes.draw do
-  
-  get "/decks"  => "decks#index" #The L side of the "#" is the controller, the R side is the action being called.
-  get "/decks/new" => "decks#new"
-  get "decks/:id" => "decks#show", as: :deck #The 'as: :deck' is naming this route, which will create a method for us.
-  post "decks" => "decks#create"
-  get "decks/:id/edit" => "decks#edit"
-  put "/decks/:id" => "decks#update"
-  delete "/decks/:id" => "decks#destroy"
+  resources :decks #This one line encompasses all the rest of the route lines in this file. 
+
+#  get "/decks"  => "decks#index" #The L side of the "#" is the controller, the R side is the action being called.
+#  get "/decks/new" => "decks#new"
+#  get "decks/:id" => "decks#show", as: :deck #The 'as: :deck' is naming this route, which will create a method for us.
+#  post "decks" => "decks#create"
+#  get "decks/:id/edit" => "decks#edit"
+#  put "/decks/:id" => "decks#update"
+#  delete "/decks/:id" => "decks#destroy"
 
 
   # The priority is based upon order of creation:
