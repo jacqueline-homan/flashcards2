@@ -1,4 +1,7 @@
 Flashcards2::Application.routes.draw do
+  root to: "homes#index" #What this route is basically doing is a 'get "/" =>"homes#index" '
+  resource :session, only: [:new, :create, :destroy]
+  resources :users, only: [:new, :create]
   resources :decks do #This one line encompasses all the rest of the route lines in this file, and begins a nested route. 
     resources :cards, except: :index
   end 
