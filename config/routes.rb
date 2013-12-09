@@ -1,6 +1,7 @@
 Flashcards2::Application.routes.draw do
-  resources :decks #This one line encompasses all the rest of the route lines in this file. 
-
+  resources :decks do #This one line encompasses all the rest of the route lines in this file, and begins a nested route. 
+    resources :cards, except: :index
+  end 
 #  get "/decks"  => "decks#index" #The L side of the "#" is the controller, the R side is the action being called.
 #  get "/decks/new" => "decks#new"
 #  get "decks/:id" => "decks#show", as: :deck #The 'as: :deck' is naming this route, which will create a method for us.
