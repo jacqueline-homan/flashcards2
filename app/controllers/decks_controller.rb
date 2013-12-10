@@ -16,7 +16,7 @@ class DecksController < ApplicationController
   end
 
   def create
-  	@deck = current_user.deck.new(params[:deck])
+  	@deck = current_user.decks.new(params[:deck])
   	@deck.save
   	redirect_to decks_path
   #  redirect_to @decks <--- This didn't work.
