@@ -5,6 +5,7 @@ class SessionsController < ApplicationController
   end
 
   def create
+    raise env["omniauth.auth"].to_yaml
     user = User.find_by_email(params[:session][:email])
     sign_in(user)
   #  cookies.signed[:user_id] = user.id #Cookie use with user id encrypted via 'signed'
